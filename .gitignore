@@ -1,0 +1,10 @@
+#variables de entorno
+.env
+
+#node dependencies
+node_modules
+
+#build folder
+dist
+
+apuntes.txt

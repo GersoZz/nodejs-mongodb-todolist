@@ -1,0 +1,19 @@
+body {
+  background: #212121;
+}
+
+.gingerbread .mouth {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+}
+
+.gingerbread .limb {
+  stroke: #cd803d;
+  stroke-width: 35px;
+  stroke-linecap: round;
+}
+
+.bg-black{
+  background:#111;
+}
