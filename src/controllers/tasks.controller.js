@@ -3,7 +3,7 @@ import Task from "../models/Task";
 export const renderTasks = async (req, res) => {
   //res.send("<h1>hellowordl</h1>");
   //const tasks = await Task.find();
-  const tasks = await Task.find().lean(); //lean convierte el BSON a JSON
+  const tasks = await Task.find().lean(); //lean() convierte el BSON a JSON
   //console.log(tasks);
   res.render("index", { tasks: tasks }); //mando arreglo a index.hbs
 };
@@ -11,9 +11,7 @@ export const renderTasks = async (req, res) => {
 export const createTask = async (req, res) => {
   try {
     const task = Task(req.body);
-
     await task.save();
-
     res.redirect("/");
   } catch (error) {
     console.log(error);
@@ -44,7 +42,6 @@ export const editTask = async (req, res) => {
 
   await Task.findByIdAndUpdate(id, req.body);
 
-  //  res.send("recibido");
   res.redirect("/");
 };
 
@@ -58,11 +55,8 @@ export const deleteTask = async (req, res) => {
 
 export const taskToggleDone = async (req, res) => {
   const { id } = req.params;
-
   const task = await Task.findById(id);
-
   task.done = !task.done;
-
   await task.save();
 
   res.redirect("/");

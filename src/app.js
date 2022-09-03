@@ -6,7 +6,7 @@ import path from "path"; //modulo de node
 import morgan from "morgan"; //modulo dev para ver las peticiones
 const app = express();
 
-app.set("views", path.join(__dirname, "views"));//path.join une direcciones, usamos eso pq las formas cambian dependiendo del SO
+app.set("views", path.join(__dirname, "views"));//path.join une direcciones, usamos esto pq las formas cambian dependiendo del SO
 
 app.engine(
   ".hbs",
@@ -21,8 +21,7 @@ app.set("view engine", ".hbs");
 
 //Middlewares
 app.use(morgan("dev"));
-app.use(express.urlencoded({ extended: false })); //esto era para entender los json? mmm
-
+app.use(express.urlencoded({ extended: false })); //para que convierta en JSON lo que se manda x el form  
 // Routes
 app.use(indexRoutes);
 
