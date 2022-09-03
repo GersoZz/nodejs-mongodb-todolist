@@ -1,4 +1,4 @@
 ### Enviroment variables
 
-MONGODB_URI
-PORT
+-MONGODB_URI
+-PORT
